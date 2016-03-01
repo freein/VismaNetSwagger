@@ -13,6 +13,7 @@ request('https://integration.acc.test.visma.net/API-index/doc/swagger', function
       "ReleaseSupplierInvoiceActionDto",
       "ReleaseSupplierInvoiceActionDto"
     ];
+
     for(var key in missingDefinitions){
       var def = missingDefinitions[key];
       json["definitions"][def] = {};

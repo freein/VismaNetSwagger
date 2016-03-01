@@ -7,10 +7,10 @@
  "basePath": "/API",
  "tags": [
   {
-   "name": "Security endpoint."
+   "name": "Token resource"
   },
   {
-   "name": "Token resource"
+   "name": "Security endpoint."
   }
  ],
  "schemes": [
@@ -9825,6 +9825,19 @@
   }
  },
  "definitions": {
+  "VniToken": {
+   "properties": {
+    "token": {
+     "type": "string"
+    },
+    "token_type": {
+     "type": "string"
+    },
+    "scope": {
+     "type": "string"
+    }
+   }
+  },
   "ContextInformation": {
    "properties": {
     "id": {
@@ -9835,19 +9848,6 @@
      "type": "string"
     },
     "type": {
-     "type": "string"
-    }
-   }
-  },
-  "VniToken": {
-   "properties": {
-    "token": {
-     "type": "string"
-    },
-    "token_type": {
-     "type": "string"
-    },
-    "scope": {
      "type": "string"
     }
    }
