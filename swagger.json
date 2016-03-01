@@ -19450,10 +19450,11 @@
     }
    }
   },
+  "ConfirmShipmentActionDto": {},
+  "ReleaseInvoiceActionDto": {},
+  "ReleaseSupplierInvoiceActionDto": {},
   "Object": {
    "type": "object"
-  },
-  "ReleaseInvoiceActionDto": {},
-  "ReleaseSupplierInvoiceActionDto": {}
+  }
  }
 }

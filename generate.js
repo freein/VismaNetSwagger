@@ -7,9 +7,17 @@ request('https://integration.acc.test.visma.net/API-index/doc/swagger', function
     var fixed = body.replace(regex, '"name" : "');
     var json = JSON.parse(fixed);
 
+    var missingDefinitions = [
+      "ConfirmShipmentActionDto",
+      "ReleaseInvoiceActionDto",
+      "ReleaseSupplierInvoiceActionDto",
+      "ReleaseSupplierInvoiceActionDto"
+    ];
+    for(var key in missingDefinitions){
+      var def = missingDefinitions[key];
+      json["definitions"][def] = {};
+    }
     json["definitions"]["Object"] = { "type": "object" };
-    json["definitions"]["ReleaseInvoiceActionDto"] = {};
-    json["definitions"]["ReleaseSupplierInvoiceActionDto"] = {};
 
     var paths = json["paths"];
     for(var key in paths){
