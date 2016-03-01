@@ -11,6 +11,27 @@ request('https://integration.acc.test.visma.net/API-index/doc/swagger', function
     json["definitions"]["ReleaseInvoiceActionDto"] = {};
     json["definitions"]["ReleaseSupplierInvoiceActionDto"] = {};
 
+    var paths = json["paths"];
+    for(var key in paths){
+      var path = paths[key];
+      if(path.put){
+        json["paths"][key].put.responses["204"] = {
+          "description": "No Content -> OK",
+          "schema": {
+            "$ref": "#/definitions/Object"
+          }
+        };
+      }
+      if(path.post){
+        json["paths"][key].post.responses["201"] = {
+          "description": "Created -> OK",
+          "schema": {
+            "$ref": "#/definitions/Object"
+          }
+        };
+      }
+    }
+
     json["paths"]["/controller/api/v1/dimension/{dimensionId}/{segmentId}/{valueId}"]["get"]["operationId"] = "Dimension_GetSegmentValue1"
     json["paths"]["/security/api/v1/testconnection"]["get"]["produces"] = ["application/json"];
     json["paths"]["/security/api/v1/token"]["delete"]["consumes"] = [ "application/json", "application/xml" ];

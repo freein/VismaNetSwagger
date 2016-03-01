@@ -1,7 +1,6 @@
 {
  "swagger": "2.0",
  "info": {
-  "description": "Get details for the returned error code https://confluence.visma.com/display/IS/IPP+Error+codes",
   "version": "1.5",
   "title": "Visma.net API"
  },
@@ -9,6 +8,9 @@
  "tags": [
   {
    "name": "Security endpoint."
+  },
+  {
+   "name": "Token resource"
   }
  ],
  "schemes": [
@@ -33,30 +35,35 @@
      {
       "name": "branch",
       "in": "query",
+      "description": "Mandatory",
       "required": false,
       "type": "string"
      },
      {
       "name": "ledger",
       "in": "query",
+      "description": "Mandatory",
       "required": false,
       "type": "string"
      },
      {
       "name": "fromPeriod",
       "in": "query",
+      "description": "Mandatory",
       "required": false,
       "type": "string"
      },
      {
       "name": "toPeriod",
       "in": "query",
+      "description": "Mandatory",
       "required": false,
       "type": "string"
      },
      {
       "name": "account",
       "in": "query",
+      "description": "Mandatory",
       "required": false,
       "type": "string"
      },
@@ -145,6 +152,17 @@
      "text/xml"
     ],
     "parameters": [
+     {
+      "name": "receiptType",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "enum": [
+       "PoReceipt",
+       "PoReturn",
+       "TransferReceipt"
+      ]
+     },
      {
       "name": "greaterThanValue",
       "in": "query",
@@ -265,6 +283,17 @@
     ],
     "parameters": [
      {
+      "name": "receiptType",
+      "in": "query",
+      "required": false,
+      "type": "string",
+      "enum": [
+       "PoReceipt",
+       "PoReturn",
+       "TransferReceipt"
+      ]
+     },
+     {
       "name": "greaterThanValue",
       "in": "query",
       "required": false,
@@ -303,7 +332,7 @@
       "schema": {
        "type": "array",
        "items": {
-        "$ref": "#/definitions/PurchaseReceiptDto"
+        "$ref": "#/definitions/PurchaseReceiptBasicDto"
        }
       }
      }
@@ -350,7 +379,7 @@
      "200": {
       "description": "OK",
       "schema": {
-       "$ref": "#/definitions/PurchaseReceiptDto"
+       "$ref": "#/definitions/PurchaseReceiptBasicDto"
       }
      }
     },
@@ -578,6 +607,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -996,6 +1031,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -1098,6 +1139,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -1231,6 +1278,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -1333,6 +1386,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -1473,6 +1532,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -1576,6 +1641,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "204": {
+      "description": "No Content -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -1637,6 +1708,12 @@
       "schema": {
        "$ref": "#/definitions/ReleaseInvoiceActionResultDto"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -1678,6 +1755,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -1730,6 +1813,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -1987,6 +2076,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -2170,6 +2265,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "204": {
+      "description": "No Content -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -2343,6 +2444,12 @@
       "type": "string"
      },
      {
+      "name": "orderType",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
+     {
       "name": "greaterThanValue",
       "in": "query",
       "required": false,
@@ -2427,6 +2534,12 @@
       "in": "path",
       "description": "",
       "required": true,
+      "type": "string"
+     },
+     {
+      "name": "orderType",
+      "in": "query",
+      "required": false,
       "type": "string"
      },
      {
@@ -2983,6 +3096,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -3086,6 +3205,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "204": {
+      "description": "No Content -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -3146,6 +3271,12 @@
       "description": "OK",
       "schema": {
        "$ref": "#/definitions/ReleaseInvoiceActionResultDto"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
       }
      }
     },
@@ -3208,6 +3339,12 @@
       "schema": {
        "$ref": "#/definitions/ReverseInvoiceActionResultDto"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -3249,6 +3386,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -3301,6 +3444,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -3545,6 +3694,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -4164,6 +4319,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -4220,6 +4381,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -4399,6 +4566,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -4491,6 +4664,12 @@
       "schema": {
        "$ref": "#/definitions/ReleaseInventoryDocumentActionResultDto"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -4547,6 +4726,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -4680,6 +4865,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -4772,6 +4963,12 @@
       "schema": {
        "$ref": "#/definitions/ReleaseInventoryDocumentActionResultDto"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -4828,6 +5025,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -4961,6 +5164,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -5020,6 +5229,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "204": {
+      "description": "No Content -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -5065,6 +5280,12 @@
       "description": "OK",
       "schema": {
        "$ref": "#/definitions/ReleaseInventoryDocumentActionResultDto"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
       }
      }
     },
@@ -5242,6 +5463,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -5334,6 +5561,12 @@
       "schema": {
        "$ref": "#/definitions/ReleaseInventoryDocumentActionResultDto"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -5390,6 +5623,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -5584,6 +5823,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -5684,6 +5929,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -6023,6 +6274,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -6126,6 +6383,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "204": {
+      "description": "No Content -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -6186,6 +6449,12 @@
       "description": "OK",
       "schema": {
        "$ref": "#/definitions/ReleasePaymentActionResultDto"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
       }
      }
     },
@@ -6330,12 +6599,128 @@
     ]
    }
   },
+  "/controller/api/v1/purchaseorder": {
+   "get": {
+    "tags": [
+     "PurchaseOrder"
+    ],
+    "summary": "Get a range of Purchase Order",
+    "operationId": "PurchaseOrder_GetAllOrder",
+    "consumes": [],
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "parameters": [
+     {
+      "name": "greaterThanValue",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "numberToRead",
+      "in": "query",
+      "required": false,
+      "type": "integer",
+      "format": "int32"
+     },
+     {
+      "name": "skipRecords",
+      "in": "query",
+      "required": false,
+      "type": "integer",
+      "format": "int32"
+     },
+     {
+      "name": "lastModifiedDateTime",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "lastModifiedDateTimeCondition",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "schema": {
+       "type": "array",
+       "items": {
+        "$ref": "#/definitions/PurchaseOrderDto"
+       }
+      }
+     }
+    },
+    "security": [
+     {
+      "vna_oauth": [
+       "financialstasks"
+      ]
+     },
+     {
+      "ipp-company-id": []
+     },
+     {
+      "ipp-application-type": []
+     }
+    ]
+   }
+  },
+  "/controller/api/v1/purchaseorder/{orderNbr}": {
+   "get": {
+    "tags": [
+     "PurchaseOrder"
+    ],
+    "summary": "Get a specific Purchase Order",
+    "operationId": "PurchaseOrder_GetOrder",
+    "consumes": [],
+    "produces": [
+     "application/json",
+     "text/json"
+    ],
+    "parameters": [
+     {
+      "name": "orderNbr",
+      "in": "path",
+      "description": "Identifies the Purchase Order",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/PurchaseOrderDto"
+      }
+     }
+    },
+    "security": [
+     {
+      "vna_oauth": [
+       "financialstasks"
+      ]
+     },
+     {
+      "ipp-company-id": []
+     },
+     {
+      "ipp-application-type": []
+     }
+    ]
+   }
+  },
   "/controller/api/v1/purchaseorderbasic": {
    "get": {
     "tags": [
      "PurchaseOrderBasic"
     ],
-    "summary": "Get a range of Sales Order",
+    "summary": "Get a range of Purchase Order",
     "operationId": "PurchaseOrderBasic_GetAllOrderBasic",
     "consumes": [],
     "produces": [
@@ -6462,6 +6847,12 @@
     ],
     "parameters": [
      {
+      "name": "orderType",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
+     {
       "name": "greaterThanValue",
       "in": "query",
       "required": false,
@@ -6556,6 +6947,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -6666,6 +7063,12 @@
       "schema": {
        "$ref": "#/definitions/CreateShipmentActionResultDto"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -6725,6 +7128,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "204": {
+      "description": "No Content -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -6757,6 +7166,12 @@
      "text/xml"
     ],
     "parameters": [
+     {
+      "name": "orderType",
+      "in": "query",
+      "required": false,
+      "type": "string"
+     },
      {
       "name": "greaterThanValue",
       "in": "query",
@@ -6852,6 +7267,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -6962,6 +7383,12 @@
       "schema": {
        "$ref": "#/definitions/CreateShipmentActionResultDto"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -7018,6 +7445,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -7326,6 +7759,79 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "204": {
+      "description": "No Content -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     }
+    },
+    "security": [
+     {
+      "vna_oauth": [
+       "financialstasks"
+      ]
+     },
+     {
+      "ipp-company-id": []
+     },
+     {
+      "ipp-application-type": []
+     }
+    ]
+   }
+  },
+  "/controller/api/v1/shipment/{shipmentNumber}/action/confirmShipment": {
+   "post": {
+    "tags": [
+     "Shipment"
+    ],
+    "summary": "Confirm shipment operation",
+    "operationId": "Shipment_ConfirmShipment",
+    "consumes": [
+     "application/json",
+     "text/json",
+     "application/x-www-form-urlencoded",
+     "application/xml",
+     "text/xml"
+    ],
+    "produces": [
+     "application/json",
+     "text/json",
+     "application/xml",
+     "text/xml"
+    ],
+    "parameters": [
+     {
+      "name": "shipmentNumber",
+      "in": "path",
+      "description": "Reference number of the shipment to be confirmed",
+      "required": true,
+      "type": "string"
+     },
+     {
+      "in": "body",
+      "name": "confirmShipmentActionDto",
+      "description": "Defines the data for the action",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/ConfirmShipmentActionDto"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/ConfirmShipmentActionResultDto"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -7582,6 +8088,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "204": {
+      "description": "No Content -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -7796,6 +8308,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "201": {
+      "description": "Created -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -8059,6 +8577,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -8566,6 +9090,12 @@
       "schema": {
        "$ref": "#/definitions/Object"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -8673,6 +9203,12 @@
       "schema": {
        "$ref": "#/definitions/ReleaseSupplierInvoiceActionResultDto"
       }
+     },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
      }
     },
     "security": [
@@ -8729,6 +9265,12 @@
     "responses": {
      "200": {
       "description": "OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "204": {
+      "description": "No Content -> OK",
       "schema": {
        "$ref": "#/definitions/Object"
       }
@@ -9115,13 +9657,20 @@
      "200": {
       "description": "Everything was ok."
      },
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
      "400": {
       "description": "Bad Request. Invalid JSON string"
      },
      "500": {
       "description": "Mandatory parameter is either null or empty. Check the returned error code."
      }
-    }
+    },
+    "deprecated": true
    },
    "delete": {
     "tags": [
@@ -9130,12 +9679,10 @@
     "operationId": "revokeSecurityToken",
     "parameters": [
      {
-      "in": "body",
-      "name": "body",
+      "name": "authorization",
+      "in": "header",
       "required": false,
-      "schema": {
-       "type": "string"
-      }
+      "type": "string"
      }
     ],
     "responses": {
@@ -9162,12 +9709,10 @@
     ],
     "parameters": [
      {
-      "in": "body",
-      "name": "body",
+      "name": "authorization",
+      "in": "header",
       "required": false,
-      "schema": {
-       "type": "string"
-      }
+      "type": "string"
      }
     ],
     "responses": {
@@ -9193,12 +9738,86 @@
      "application/xml"
     ]
    }
+  },
+  "/security/api/v2/token": {
+   "post": {
+    "tags": [
+     "Token resource"
+    ],
+    "summary": "Obtain access token",
+    "description": "",
+    "operationId": "token",
+    "consumes": [
+     "application/x-www-form-urlencoded"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "parameters": [
+     {
+      "name": "Authorization",
+      "in": "header",
+      "description": "HTTP Basic authentication, the preffered way to authenticate clients",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "grant_type",
+      "in": "formData",
+      "description": "Grant type",
+      "required": true,
+      "type": "string",
+      "enum": [
+       "password"
+      ]
+     },
+     {
+      "name": "client_id",
+      "in": "formData",
+      "description": "Client identifier. Mandatory to be set when no other HTTP authentication was used. For instance, a client can also use Authorization header to pass HTTP Basic authentication details",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "client_secret",
+      "in": "formData",
+      "description": "Client secret. Mandatory to be set only when no other HTTP authentication was set.",
+      "required": false,
+      "type": "string"
+     },
+     {
+      "name": "username",
+      "in": "formData",
+      "description": "Visma.net user email",
+      "required": true,
+      "type": "string"
+     },
+     {
+      "name": "password",
+      "in": "formData",
+      "description": "Visma.net password",
+      "required": true,
+      "type": "string"
+     }
+    ],
+    "responses": {
+     "201": {
+      "description": "Created -> OK",
+      "schema": {
+       "$ref": "#/definitions/Object"
+      }
+     },
+     "default": {
+      "description": "successful operation"
+     }
+    }
+   }
   }
  },
  "securityDefinitions": {
   "vna_oauth": {
    "type": "oauth2",
-   "tokenUrl": "/API/security/api/v1/token",
+   "tokenUrl": "/API/security/api/v2/token",
    "flow": "password",
    "scopes": {
     "financialstasks": "Access to Visma.net Financial endpoints"
@@ -9206,19 +9825,6 @@
   }
  },
  "definitions": {
-  "VniToken": {
-   "properties": {
-    "token": {
-     "type": "string"
-    },
-    "token_type": {
-     "type": "string"
-    },
-    "scope": {
-     "type": "string"
-    }
-   }
-  },
   "ContextInformation": {
    "properties": {
     "id": {
@@ -9229,6 +9835,19 @@
      "type": "string"
     },
     "type": {
+     "type": "string"
+    }
+   }
+  },
+  "VniToken": {
+   "properties": {
+    "token": {
+     "type": "string"
+    },
+    "token_type": {
+     "type": "string"
+    },
+    "scope": {
      "type": "string"
     }
    }
@@ -10806,6 +11425,9 @@
   },
   "SalesOrderQueryParameters": {
    "properties": {
+    "orderType": {
+     "type": "string"
+    },
     "greaterThanValue": {
      "type": "string"
     },
@@ -10957,17 +11579,7 @@
      }
     },
     "orderType": {
-     "type": "string",
-     "enum": [
-      "CreditNote",
-      "DebitNote",
-      "Invoice",
-      "QuoteOrder",
-      "RMAOrder",
-      "SalesOrder",
-      "StandardOrder",
-      "TransferOrder"
-     ]
+     "type": "string"
     },
     "orderNo": {
      "type": "string"
@@ -11367,17 +11979,7 @@
      }
     },
     "orderType": {
-     "type": "string",
-     "enum": [
-      "CreditNote",
-      "DebitNote",
-      "Invoice",
-      "QuoteOrder",
-      "RMAOrder",
-      "SalesOrder",
-      "StandardOrder",
-      "TransferOrder"
-     ]
+     "type": "string"
     },
     "orderNo": {
      "type": "string"
@@ -12917,19 +13519,24 @@
   "GeneralLedgerTransactionsQueryParameters": {
    "properties": {
     "branch": {
-     "type": "string"
+     "type": "string",
+     "description": "Mandatory"
     },
     "ledger": {
-     "type": "string"
+     "type": "string",
+     "description": "Mandatory"
     },
     "fromPeriod": {
-     "type": "string"
+     "type": "string",
+     "description": "Mandatory"
     },
     "toPeriod": {
-     "type": "string"
+     "type": "string",
+     "description": "Mandatory"
     },
     "account": {
-     "type": "string"
+     "type": "string",
+     "description": "Mandatory"
     },
     "subaccountId": {
      "type": "string"
@@ -15158,8 +15765,92 @@
     }
    }
   },
-  "PurchaseOrderBasicDto": {
+  "PurchaseOrderDto": {
    "properties": {
+    "shippingDestinationType": {
+     "type": "string",
+     "enum": [
+      "CompanyLocation",
+      "Customer",
+      "Vendor",
+      "Site"
+     ]
+    },
+    "shipTo": {
+     "$ref": "#/definitions/BAccountDescriptionDto"
+    },
+    "shippingLocation": {
+     "$ref": "#/definitions/LocationIdNameDto"
+    },
+    "shippingContact": {
+     "$ref": "#/definitions/PurchaseOrderContactDto"
+    },
+    "shippingAddress": {
+     "$ref": "#/definitions/PurchaseOrderAddressDto"
+    },
+    "fobPoint": {
+     "type": "string"
+    },
+    "shipVia": {
+     "type": "string"
+    },
+    "remitContact": {
+     "$ref": "#/definitions/PurchaseOrderContactDto"
+    },
+    "remitAddress": {
+     "$ref": "#/definitions/PurchaseOrderAddressDto"
+    },
+    "terms": {
+     "$ref": "#/definitions/CreditTermsDto"
+    },
+    "supplierVatZone": {
+     "$ref": "#/definitions/VatZoneDto"
+    },
+    "discountDetails": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/DiscountDetailDto"
+     }
+    },
+    "branch": {
+     "$ref": "#/definitions/BranchNumberDto"
+    },
+    "salesOrderType": {
+     "type": "string"
+    },
+    "salesOrderNbr": {
+     "type": "string"
+    },
+    "requisitionRefNbr": {
+     "type": "string"
+    },
+    "paymentRefNbr": {
+     "type": "string"
+    },
+    "workgroupID": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "dontPrint": {
+     "type": "boolean"
+    },
+    "printed": {
+     "type": "boolean"
+    },
+    "dontEmail": {
+     "type": "boolean"
+    },
+    "emailed": {
+     "type": "boolean"
+    },
+    "openQuantity": {
+     "type": "number",
+     "format": "double"
+    },
+    "openBalance": {
+     "type": "number",
+     "format": "double"
+    },
     "orderType": {
      "type": "string",
      "enum": [
@@ -15246,9 +15937,130 @@
      "items": {
       "$ref": "#/definitions/TaxDetailDto"
      }
+    },
+    "lastModifiedDateTime": {
+     "type": "string",
+     "format": "date-time"
     }
    },
    "description": "This class represents a Purchase Order in PurchaseOrderController. Used for getting data."
+  },
+  "PurchaseOrderContactDto": {
+   "properties": {
+    "overrideContact": {
+     "type": "boolean"
+    },
+    "contactId": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "name": {
+     "type": "string"
+    },
+    "attention": {
+     "type": "string"
+    },
+    "email": {
+     "type": "string"
+    },
+    "web": {
+     "type": "string"
+    },
+    "phone1": {
+     "type": "string"
+    },
+    "phone2": {
+     "type": "string"
+    },
+    "fax": {
+     "type": "string"
+    }
+   }
+  },
+  "PurchaseOrderAddressDto": {
+   "properties": {
+    "overrideAddress": {
+     "type": "boolean"
+    },
+    "addressId": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "addressLine1": {
+     "type": "string"
+    },
+    "addressLine2": {
+     "type": "string"
+    },
+    "addressLine3": {
+     "type": "string"
+    },
+    "postalCode": {
+     "type": "string"
+    },
+    "city": {
+     "type": "string"
+    },
+    "country": {
+     "$ref": "#/definitions/CountryDto"
+    },
+    "county": {
+     "$ref": "#/definitions/CountyDto"
+    }
+   }
+  },
+  "DiscountDetailDto": {
+   "properties": {
+    "lineNbr": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "skipDiscount": {
+     "type": "boolean"
+    },
+    "discountCode": {
+     "type": "string"
+    },
+    "sequanceID": {
+     "type": "string"
+    },
+    "type": {
+     "type": "string",
+     "enum": [
+      "Line",
+      "Group",
+      "Document",
+      "Flat"
+     ]
+    },
+    "manualDiscount": {
+     "type": "boolean"
+    },
+    "discountableAmt": {
+     "type": "number",
+     "format": "double"
+    },
+    "discountableQty": {
+     "type": "number",
+     "format": "double"
+    },
+    "discountAmt": {
+     "type": "number",
+     "format": "double"
+    },
+    "discount": {
+     "type": "number",
+     "format": "double"
+    },
+    "freeItem": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "freeItemQty": {
+     "type": "number",
+     "format": "double"
+    }
+   }
   },
   "SupplierDescriptionDto": {
    "properties": {
@@ -15266,6 +16078,10 @@
   },
   "PurchaseOrderLineDto": {
    "properties": {
+    "lineNbr": {
+     "type": "integer",
+     "format": "int32"
+    },
     "branch": {
      "$ref": "#/definitions/BranchNumberDto"
     },
@@ -15367,8 +16183,7 @@
      "type": "string"
     },
     "sub": {
-     "type": "integer",
-     "format": "int32"
+     "$ref": "#/definitions/SubAccountDto"
     },
     "project": {
      "$ref": "#/definitions/ProjectDto"
@@ -15513,8 +16328,110 @@
     }
    }
   },
+  "PurchaseOrderBasicDto": {
+   "properties": {
+    "orderType": {
+     "type": "string",
+     "enum": [
+      "RegularOrder",
+      "DropShip",
+      "Blanket",
+      "StandardBlanket"
+     ]
+    },
+    "orderNbr": {
+     "type": "string"
+    },
+    "hold": {
+     "type": "boolean"
+    },
+    "status": {
+     "type": "string",
+     "enum": [
+      "Hold",
+      "Balanced",
+      "Voided",
+      "Open",
+      "PendingPrint",
+      "PendingEmail",
+      "Cancelled",
+      "Closed",
+      "Printed"
+     ]
+    },
+    "date": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "promisedOn": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "description": {
+     "type": "string"
+    },
+    "supplier": {
+     "$ref": "#/definitions/SupplierDescriptionDto"
+    },
+    "location": {
+     "$ref": "#/definitions/LocationIdNameDto"
+    },
+    "owner": {
+     "$ref": "#/definitions/UserDescriptionDto"
+    },
+    "currency": {
+     "type": "string"
+    },
+    "supplierRef": {
+     "type": "string"
+    },
+    "lineTotal": {
+     "type": "number",
+     "format": "double"
+    },
+    "vatExemptTotal": {
+     "type": "number",
+     "format": "double"
+    },
+    "taxTotal": {
+     "type": "number",
+     "format": "double"
+    },
+    "orderTotal": {
+     "type": "number",
+     "format": "double"
+    },
+    "controlTotal": {
+     "type": "number",
+     "format": "double"
+    },
+    "lines": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/PurchaseOrderLineDto"
+     }
+    },
+    "taxDetails": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/TaxDetailDto"
+     }
+    },
+    "lastModifiedDateTime": {
+     "type": "string",
+     "format": "date-time"
+    }
+   },
+   "description": "This class represents a Purchase Order in PurchaseOrderController. Used for getting data."
+  },
   "PurchaseReceiptDto": {
    "properties": {
+    "landedCost": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/LandedCostDto"
+     }
+    },
     "receiptType": {
      "type": "string",
      "enum": [
@@ -15586,23 +16503,117 @@
      "type": "number",
      "format": "double"
     },
+    "lastModifiedDateTime": {
+     "type": "string",
+     "format": "date-time"
+    },
     "lines": {
      "type": "array",
      "items": {
       "$ref": "#/definitions/PurchaseReceiptLineDto"
      }
-    },
-    "landedCost": {
-     "type": "array",
-     "items": {
-      "$ref": "#/definitions/LandedCostDto"
-     }
     }
    },
    "description": "This class represents a Purchase Receipt in PurchaseReceiptController. Used for getting data."
   },
+  "LandedCostDto": {
+   "properties": {
+    "lineNbr": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "landedCostCode": {
+     "type": "string"
+    },
+    "description": {
+     "type": "string"
+    },
+    "purchaseInvoiceNbr": {
+     "type": "string"
+    },
+    "supplier": {
+     "$ref": "#/definitions/SupplierDescriptionDto"
+    },
+    "location": {
+     "$ref": "#/definitions/LocationDto"
+    },
+    "apBillDate": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "currency": {
+     "type": "string"
+    },
+    "amount": {
+     "type": "number",
+     "format": "double"
+    },
+    "taxCategory": {
+     "$ref": "#/definitions/TaxCategoryNumberDescriptionDto"
+    },
+    "terms": {
+     "$ref": "#/definitions/CreditTermsDto"
+    },
+    "inventory": {
+     "$ref": "#/definitions/InventoryNumberDescriptionDto"
+    },
+    "apDocType": {
+     "type": "string",
+     "enum": [
+      "Check",
+      "CreditAdj",
+      "DebitAdj",
+      "Invoice",
+      "Prepayment",
+      "QuickCheck",
+      "Refund",
+      "VoidCheck",
+      "VoidQuickCheck"
+     ]
+    },
+    "apRefNbr": {
+     "type": "string"
+    },
+    "inDocType": {
+     "type": "string",
+     "enum": [
+      "Invoice",
+      "DebitNote",
+      "CreditNote",
+      "Payment",
+      "VoidPayment",
+      "Prepayment",
+      "Refund",
+      "FinCharge",
+      "SmallBalanceWo",
+      "SmallCreditWo",
+      "CashSale",
+      "CashReturn",
+      "Undefined",
+      "NoUpdate"
+     ]
+    },
+    "inRefNbr": {
+     "type": "string"
+    },
+    "postponePurchaseInvoiceCreation": {
+     "type": "boolean"
+    }
+   },
+   "description": "This class represents a Landed Cost Line for Purchase Receipt in PurchaseReceiptController. Used for getting data."
+  },
   "PurchaseReceiptLineDto": {
    "properties": {
+    "allocations": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/AllocationsDto"
+     }
+    },
+    "lineNbr": {
+     "type": "integer",
+     "format": "int32"
+    },
     "branch": {
      "$ref": "#/definitions/BranchNumberDto"
     },
@@ -15698,6 +16709,10 @@
     "projectTask": {
      "$ref": "#/definitions/ProjectTaskDto"
     },
+    "expirationDate": {
+     "type": "string",
+     "format": "date-time"
+    },
     "lotSerialNumber": {
      "type": "string"
     },
@@ -15743,87 +16758,31 @@
    },
    "description": "This class represents a Purchase Order Line in PurchaseReceiptContraoller. Used for getting data."
   },
-  "LandedCostDto": {
+  "AllocationsDto": {
    "properties": {
-    "landedCostCode": {
-     "type": "string"
-    },
-    "description": {
-     "type": "string"
-    },
-    "purchaseInvoiceNbr": {
-     "type": "string"
-    },
-    "supplier": {
-     "$ref": "#/definitions/SupplierDescriptionDto"
+    "lineNbr": {
+     "type": "integer",
+     "format": "int32"
     },
     "location": {
      "$ref": "#/definitions/LocationDto"
     },
-    "apBillDate": {
-     "type": "string",
-     "format": "date-time"
-    },
-    "currency": {
+    "lotSerialNumber": {
      "type": "string"
     },
-    "amount": {
+    "quantity": {
      "type": "number",
      "format": "double"
     },
-    "taxCategory": {
-     "$ref": "#/definitions/TaxCategoryNumberDescriptionDto"
-    },
-    "terms": {
-     "$ref": "#/definitions/CreditTermsDto"
-    },
-    "inventory": {
-     "$ref": "#/definitions/InventoryNumberDescriptionDto"
-    },
-    "apDocType": {
-     "type": "string",
-     "enum": [
-      "Check",
-      "CreditAdj",
-      "DebitAdj",
-      "Invoice",
-      "Prepayment",
-      "QuickCheck",
-      "Refund",
-      "VoidCheck",
-      "VoidQuickCheck"
-     ]
-    },
-    "apRefNbr": {
+    "uom": {
      "type": "string"
     },
-    "inDocType": {
+    "expirationDate": {
      "type": "string",
-     "enum": [
-      "Invoice",
-      "DebitNote",
-      "CreditNote",
-      "Payment",
-      "VoidPayment",
-      "Prepayment",
-      "Refund",
-      "FinCharge",
-      "SmallBalanceWo",
-      "SmallCreditWo",
-      "CashSale",
-      "CashReturn",
-      "Undefined",
-      "NoUpdate"
-     ]
-    },
-    "inRefNbr": {
-     "type": "string"
-    },
-    "postponePurchaseInvoiceCreation": {
-     "type": "boolean"
+     "format": "date-time"
     }
    },
-   "description": "This class represents a Landed Cost Line for Purchase Receipt in PurchaseReceiptController. Used for getting data."
+   "description": "This class represents a Allocations for Purchase Receipt Line in PurchaseReceiptController. Used for getting data."
   },
   "SubAccountDescriptionDto": {
    "properties": {
@@ -15837,6 +16796,14 @@
   },
   "PurchaseReceiptQueryParameters": {
    "properties": {
+    "receiptType": {
+     "type": "string",
+     "enum": [
+      "PoReceipt",
+      "PoReturn",
+      "TransferReceipt"
+     ]
+    },
     "greaterThanValue": {
      "type": "string"
     },
@@ -15855,6 +16822,92 @@
      "type": "string"
     }
    }
+  },
+  "PurchaseReceiptBasicDto": {
+   "properties": {
+    "receiptType": {
+     "type": "string",
+     "enum": [
+      "PoReceipt",
+      "PoReturn",
+      "TransferReceipt"
+     ]
+    },
+    "receiptNbr": {
+     "type": "string"
+    },
+    "hold": {
+     "type": "boolean"
+    },
+    "status": {
+     "type": "string",
+     "enum": [
+      "Hold",
+      "Balanced",
+      "Released"
+     ]
+    },
+    "date": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "postPeriod": {
+     "type": "string"
+    },
+    "warehouse": {
+     "$ref": "#/definitions/WarehouseIdDescriptionDto"
+    },
+    "supplier": {
+     "$ref": "#/definitions/SupplierDescriptionDto"
+    },
+    "location": {
+     "$ref": "#/definitions/LocationDto"
+    },
+    "currency": {
+     "type": "string"
+    },
+    "createBill": {
+     "type": "boolean"
+    },
+    "supplierRef": {
+     "type": "string"
+    },
+    "totalQty": {
+     "type": "number",
+     "format": "double"
+    },
+    "controlQty": {
+     "type": "number",
+     "format": "double"
+    },
+    "vatExemptTotal": {
+     "type": "number",
+     "format": "double"
+    },
+    "vatTaxableTotal": {
+     "type": "number",
+     "format": "double"
+    },
+    "totalAmt": {
+     "type": "number",
+     "format": "double"
+    },
+    "controlTotal": {
+     "type": "number",
+     "format": "double"
+    },
+    "lastModifiedDateTime": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "lines": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/PurchaseReceiptLineDto"
+     }
+    }
+   },
+   "description": "This class represents a Purchase Receipt in PurchaseReceiptController. Used for getting data."
   },
   "SalesOrderUpdateDto": {
    "properties": {
@@ -15958,7 +17011,7 @@
      }
     },
     "orderType": {
-     "$ref": "#/definitions/DtoValue[Nullable[SalesOrderTypes]]"
+     "$ref": "#/definitions/DtoValue[String]"
     },
     "orderNumber": {
      "$ref": "#/definitions/DtoValue[String]"
@@ -15979,7 +17032,7 @@
      "$ref": "#/definitions/DtoValue[String]"
     },
     "customer": {
-     "$ref": "#/definitions/DtoValue[Int32]"
+     "$ref": "#/definitions/DtoValue[String]"
     },
     "location": {
      "$ref": "#/definitions/DtoValue[String]"
@@ -16082,7 +17135,7 @@
      "$ref": "#/definitions/DtoValue[String]"
     },
     "projectTask": {
-     "$ref": "#/definitions/DtoValue[Nullable[Int32]]"
+     "$ref": "#/definitions/DtoValue[String]"
     },
     "operation": {
      "type": "string",
@@ -16124,23 +17177,6 @@
     }
    },
    "description": "This class represent a Sales Order Line in Sales Order Controller. Used to pass data to server for creating or updating an order line"
-  },
-  "DtoValue[Nullable[SalesOrderTypes]]": {
-   "properties": {
-    "value": {
-     "type": "string",
-     "enum": [
-      "CreditNote",
-      "DebitNote",
-      "Invoice",
-      "QuoteOrder",
-      "RMAOrder",
-      "SalesOrder",
-      "StandardOrder",
-      "TransferOrder"
-     ]
-    }
-   }
   },
   "SalesOrderContactUpdateDto": {
    "properties": {
@@ -16226,6 +17262,9 @@
   },
   "CreateShipmentActionDto": {
    "properties": {
+    "orderType": {
+     "type": "string"
+    },
     "returnShipmentDto": {
      "type": "boolean"
     },
@@ -16635,7 +17674,7 @@
      }
     },
     "orderType": {
-     "$ref": "#/definitions/DtoValue[Nullable[SalesOrderTypes]]"
+     "$ref": "#/definitions/DtoValue[String]"
     },
     "orderNumber": {
      "$ref": "#/definitions/DtoValue[String]"
@@ -16656,7 +17695,7 @@
      "$ref": "#/definitions/DtoValue[String]"
     },
     "customer": {
-     "$ref": "#/definitions/DtoValue[Int32]"
+     "$ref": "#/definitions/DtoValue[String]"
     },
     "location": {
      "$ref": "#/definitions/DtoValue[String]"
@@ -16970,6 +18009,26 @@
     },
     "customRefNbr2": {
      "$ref": "#/definitions/DtoValue[String]"
+    }
+   }
+  },
+  "ConfirmShipmentActionResultDto": {
+   "properties": {
+    "actionId": {
+     "type": "string",
+     "format": "uuid"
+    },
+    "actionResult": {
+     "type": "string",
+     "enum": [
+      "Queued",
+      "InProcess",
+      "Failed",
+      "Done"
+     ]
+    },
+    "errorInfo": {
+     "type": "string"
     }
    }
   },
