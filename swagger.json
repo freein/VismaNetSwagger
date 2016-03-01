@@ -548,10 +548,7 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      }
     },
     "security": [
@@ -606,16 +603,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -1027,16 +1018,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -1138,16 +1123,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -1274,16 +1253,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -1385,16 +1358,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -1528,16 +1495,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -1637,16 +1598,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -1710,10 +1665,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -1754,16 +1706,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -1812,16 +1758,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -2072,16 +2012,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -2261,16 +2195,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -3092,16 +3020,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -3201,16 +3123,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -3274,10 +3190,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -3341,10 +3254,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -3385,16 +3295,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -3443,16 +3347,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -3693,16 +3591,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -4315,16 +4207,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -4380,16 +4266,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -4562,16 +4442,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -4666,10 +4540,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -4725,16 +4596,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -4861,16 +4726,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -4965,10 +4824,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -5024,16 +4880,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -5160,16 +5010,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -5225,16 +5069,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -5283,10 +5121,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -5459,16 +5294,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -5563,10 +5392,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -5622,16 +5448,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -5819,16 +5639,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -5928,16 +5742,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -6270,16 +6078,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -6379,16 +6181,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -6452,10 +6248,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -6946,16 +6739,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -7065,10 +6852,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -7124,16 +6908,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -7266,16 +7044,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -7385,10 +7157,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -7444,16 +7213,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -7755,16 +7518,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -7828,10 +7585,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -8084,16 +7838,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -8307,16 +8055,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -8576,16 +8318,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -9086,16 +8822,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -9205,10 +8935,7 @@
       }
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      }
     },
     "security": [
@@ -9264,16 +8991,10 @@
     ],
     "responses": {
      "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "OK"
      },
      "204": {
-      "description": "No Content -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "No Content -> OK"
      }
     },
     "security": [
@@ -9625,7 +9346,10 @@
        "type": "string"
       }
      }
-    }
+    },
+    "consumes": [
+     "application/json"
+    ]
    }
   },
   "/security/api/v1/token": {
@@ -9658,10 +9382,7 @@
       "description": "Everything was ok."
      },
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      },
      "400": {
       "description": "Bad Request. Invalid JSON string"
@@ -9802,10 +9523,7 @@
     ],
     "responses": {
      "201": {
-      "description": "Created -> OK",
-      "schema": {
-       "$ref": "#/definitions/Object"
-      }
+      "description": "Created -> OK"
      },
      "default": {
       "description": "successful operation"
@@ -19452,9 +19170,6 @@
   },
   "ConfirmShipmentActionDto": {},
   "ReleaseInvoiceActionDto": {},
-  "ReleaseSupplierInvoiceActionDto": {},
-  "Object": {
-   "type": "object"
-  }
+  "ReleaseSupplierInvoiceActionDto": {}
  }
 }

@@ -18,27 +18,41 @@ request('https://integration.acc.test.visma.net/API-index/doc/swagger', function
       var def = missingDefinitions[key];
       json["definitions"][def] = {};
     }
-    json["definitions"]["Object"] = { "type": "object" };
+  //  json["definitions"]["Object"] = { "type": "object" };
 
     var paths = json["paths"];
     for(var key in paths){
       var path = paths[key];
       if(path.put){
         json["paths"][key].put.responses["204"] = {
-          "description": "No Content -> OK",
-          "schema": {
-            "$ref": "#/definitions/Object"
-          }
+          "description": "No Content -> OK"
         };
       }
       if(path.post){
         json["paths"][key].post.responses["201"] = {
-          "description": "Created -> OK",
-          "schema": {
-            "$ref": "#/definitions/Object"
-          }
+          "description": "Created -> OK"
         };
       }
+      if(path.get){
+        if(!json["paths"][key].get.consumes)
+          json["paths"][key].get.consumes = ["application/json"];
+      }
+      var methods = ["post", "put", "get"]
+      for(var index in methods){
+        var method = methods[index];
+        if(json["paths"][key][method] &&
+           json["paths"][key][method].responses &&
+           json["paths"][key][method].responses["200"] &&
+           json["paths"][key][method].responses["200"].schema){
+          if(json["paths"][key][method].responses["200"].schema["$ref"] === "#/definitions/Object"){
+            delete json["paths"][key][method].responses["200"].schema;
+            console.log("Deleted schema");
+          }
+        } else {
+          console.log("Response missing??", key)
+        }
+      }
+
     }
 
     json["paths"]["/controller/api/v1/dimension/{dimensionId}/{segmentId}/{valueId}"]["get"]["operationId"] = "Dimension_GetSegmentValue1"
