@@ -16,9 +16,10 @@ request('https://integration.acc.test.visma.net/API-index/doc/swagger', function
 
     for(var key in missingDefinitions){
       var def = missingDefinitions[key];
-      json["definitions"][def] = {};
+      json["definitions"][def] = {
+        "properties": {}
+      };
     }
-  //  json["definitions"]["Object"] = { "type": "object" };
 
     var paths = json["paths"];
     for(var key in paths){
@@ -46,10 +47,7 @@ request('https://integration.acc.test.visma.net/API-index/doc/swagger', function
            json["paths"][key][method].responses["200"].schema){
           if(json["paths"][key][method].responses["200"].schema["$ref"] === "#/definitions/Object"){
             delete json["paths"][key][method].responses["200"].schema;
-            console.log("Deleted schema");
           }
-        } else {
-          console.log("Response missing??", key)
         }
       }
 
