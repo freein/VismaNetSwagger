@@ -1,7 +1,7 @@
 var request = require("request");
 var fs = require("fs");
 
-request('https://integration.acc.test.visma.net/API-index/doc/swagger', function (error, response, body) {
+request('https://integration.visma.net/API-index/doc/swagger', function (error, response, body) {
   if (!error && response.statusCode == 200) {
     var regex = /"name" : "([0-9a-zA-Z]+)?Paramete?rs\./gi;
     var fixed = body.replace(regex, '"name" : "');

@@ -1,7 +1,7 @@
 {
  "swagger": "2.0",
  "info": {
-  "version": "1.5",
+  "version": "2.0",
   "title": "Visma.net API"
  },
  "basePath": "/API",
@@ -7539,70 +7539,6 @@
     ]
    }
   },
-  "/controller/api/v1/shipment/{shipmentNumber}/action/confirmShipment": {
-   "post": {
-    "tags": [
-     "Shipment"
-    ],
-    "summary": "Confirm shipment operation",
-    "operationId": "Shipment_ConfirmShipment",
-    "consumes": [
-     "application/json",
-     "text/json",
-     "application/x-www-form-urlencoded",
-     "application/xml",
-     "text/xml"
-    ],
-    "produces": [
-     "application/json",
-     "text/json",
-     "application/xml",
-     "text/xml"
-    ],
-    "parameters": [
-     {
-      "name": "shipmentNumber",
-      "in": "path",
-      "description": "Reference number of the shipment to be confirmed",
-      "required": true,
-      "type": "string"
-     },
-     {
-      "in": "body",
-      "name": "confirmShipmentActionDto",
-      "description": "Defines the data for the action",
-      "required": true,
-      "schema": {
-       "$ref": "#/definitions/ConfirmShipmentActionDto"
-      }
-     }
-    ],
-    "responses": {
-     "200": {
-      "description": "OK",
-      "schema": {
-       "$ref": "#/definitions/ConfirmShipmentActionResultDto"
-      }
-     },
-     "201": {
-      "description": "Created -> OK"
-     }
-    },
-    "security": [
-     {
-      "vna_oauth": [
-       "financialstasks"
-      ]
-     },
-     {
-      "ipp-company-id": []
-     },
-     {
-      "ipp-application-type": []
-     }
-    ]
-   }
-  },
   "/controller/api/v1/stocktake": {
    "get": {
     "tags": [
@@ -9557,6 +9493,16 @@
     }
    }
   },
+  "UserCredentials": {
+   "properties": {
+    "email": {
+     "type": "string"
+    },
+    "password": {
+     "type": "string"
+    }
+   }
+  },
   "VniToken": {
    "properties": {
     "token": {
@@ -9566,16 +9512,6 @@
      "type": "string"
     },
     "scope": {
-     "type": "string"
-    }
-   }
-  },
-  "UserCredentials": {
-   "properties": {
-    "email": {
-     "type": "string"
-    },
-    "password": {
      "type": "string"
     }
    }
@@ -17727,26 +17663,6 @@
     },
     "customRefNbr2": {
      "$ref": "#/definitions/DtoValue[String]"
-    }
-   }
-  },
-  "ConfirmShipmentActionResultDto": {
-   "properties": {
-    "actionId": {
-     "type": "string",
-     "format": "uuid"
-    },
-    "actionResult": {
-     "type": "string",
-     "enum": [
-      "Queued",
-      "InProcess",
-      "Failed",
-      "Done"
-     ]
-    },
-    "errorInfo": {
-     "type": "string"
     }
    }
   },
